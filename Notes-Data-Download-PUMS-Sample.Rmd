@@ -1,0 +1,75 @@
+---
+title: 'Procedures for Collecting PUMS Sample Data from the 2014 ACS Survey'
+author: "Roy L Beasley"
+date: "August 22, 2016"
+output: html_document
+---
+   
+American Community Service survey data for 2014  obtained from the U.S. Census as follows:
+
+<b>A. Prepare your Mac or PC</b>    
+
+* Install recent version of Firefox or Microsoft's IE browser 
+
+* Install latest version of Java
+
+
+<b>B. Download data from ACS Website</b>
+
+1. Direct Firefox of IE browser to "TheDataWeb" site at<b> [http://thedataweb.rm.census.gov/index.html](http://thedataweb.rm.census.gov/index.html)</b>
+2. Click "Launch the App" link on lower right side of screen to launch the DataFerret Java app.
+3. When new window opens, enter your email address on the line provided (middle of page), then click "OK"
+4. When new window opens, click "Step 1" button (top left)
+    + Click "American Community Services" key (left side of page)
+    + When list drops down, click "Public Use Microdata Sample" key
+    + When list drops down, click "2014" ... then click "View Variables"
+    + Check "Population" (middle of page) ... then click "Search Variables" icon (bottom)
+    
+5. When extensive list appears (middle of page), double click "PWGTP -- PUMS person weight" ... or click the "Browse Select Variable" button (top of page)   
+    + When pop-up window appears, check "Select ACS PWGTP"
+    + Click "OK" ... then click "OK" again in small confirmation window ... this returns to the main window
+
+6. Double-click "RAC1P -- Recoded race" variable
+    + When pop-up window appears, check "Select ACS RAC1P Recoded"
+    + Click "OK" ... then click "OK" again in small confirmation window ... this returns to the main window
+7. Double-click "POWSP -- Place of work" variable (place of work):   
+    + When pop-up window appears, check "Select ACS RAC1P Recoded"
+    + You only want 50 states and DC, so check "Deselect" for all values from "Puerto Rico" to end of the list
+    + Click "OK" ... then click "OK" again in small confirmation window ... this returns to the main window
+8. Double-click "SOCP -- occupation code" variable   
+    + When pop-up window appears check "Select ACS POWSP Place of work"
+    + You only want 11 software and 2 hardware values, so click "Deselect all values" (right side)
+    +  Then check the following values:
+151111  ...  CMM-COMPUTER AND INFORMATION RESEARCH SCIENTISTS   
+151121  ...  CMM-COMPUTER SYSTEMS ANALYSTS   
+151122  ...  CMM-INFORMATION SECURITY ANALYSTS   
+151131  ...  CMM-COMPUTER PROGRAMMERS   
+151134  ...  CMM-WEB DEVELOPERS   
+15113X  ...  CMM-SOFTWARE DEVELOPERS,APPLICATIONS AND SYSTEMS SOFTWARE   
+151141  ...  CMM-DATABASE ADMINISTRATORS    
+151142  ...  CMM-NETWORK AND COMPUTER SYSTEMS ADMINISTRATORS   
+151143  ...  CMM-COMPUTER NETWORK ARCHITECTS   
+151150  ...  CMM-COMPUTER SUPPORT SPECIALISTS   
+151199  ...  CMM-COMPUTER OCCUPATIONS, ALL OTHER   
+172061  ...  ENG-COMPUTER HARDWARE ENGINEERS   
+172070  ...  ENG-ELECTRICAL AND ELECTRONICS ENGINEERS
+    + Click "OK" ... then click "OK" again in small confirmation window ... this returns to the main window     
+9. Double-click "HISP -- Hispanic" 
+    + When pop-up window appears check "Select ACS HISP"
+    + Click "OK" ... then click "OK" again in small confirmation window ... this returns to the main window
+
+10. Click "Step 2 -- Data Basket" button (top of page)
+11. Click "Save selected variables codebook" (right side of page)
+    + In the pop-up window, provide folder/directory location on your computer a name for the file to save the codebook text file ... <i>Note that you must change the name of file in the Data-1A.R file to match the file name you specified.</i>
+    + Click "Save selected variables code book" (right side of page) ... pop-up window closes and returns to main window
+12. Click "Download" icon (top of page) 
+    + Select "Comma Delimited",  ... then click "Get Extract"
+13. To save the specifications for downloading this data faster next time click "File" (top left of window), 
+    + Click "Save As", 
+    + In pop-up window, provide folder/directory location on your computer a name for the file (.fsf) in which to save the DataFerret script file (.fsf)
+    + The next time you visit the DataFerret you can click "File", then click "Open" to load the .fsf file ... The Data Basket will be loaded with the variables you specified in the script you saved ... at which point you delete some variables ("Delete" key on upper right side of page) ...  and/or click the "Step 1" button to add new variables/values to your basket.
+    
+14. I downloaded the PUMS sample data for 2014 for race and thirteen specified occupations into a file called <b>[Race-CA-DC-GA-NC-NY-WA-Occupation-PUMS-2014.csv](Race-CA-DC-GA-NC-NY-WA-Occupation-PUMS-2014.csv)</b> in the report's repo.  I downloaded the ACS codebook into  <b>[Race-CA-DC-GA-NC-NY-WA-Occupation-PUMS-2014-CodeBook.txt](Race-CA-DC-GA-NC-NY-WA-Occupation-PUMS-2014-CodeBook.txt)</b>. Then I copied and pasted the codes for state, sex, occupation, and race into separate .txt files
+
+    
+
