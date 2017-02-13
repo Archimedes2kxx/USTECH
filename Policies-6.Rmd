@@ -1,5 +1,5 @@
 ---
-title: "Rashomon -- Conflicting Views of Diversity in Tech -- Version 0.491"
+title: "Conflicting Views of Diversity in Tech -- Version 0.491"
 author: "Roy L Beasley, PhD — DLL Editor"
 date: "2/6/2017"
 output: 
