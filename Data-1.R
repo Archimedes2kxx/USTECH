@@ -8,6 +8,7 @@
 
 ####################
     load(file="functions-0.rda")
+    library(readr)
     library(dplyr)
     library(tidyr)
  
@@ -15,8 +16,9 @@
 ### 1. Read downloaded PUMS sample data from 2015 for techs ... citizens and foreigners
     ### file = "Race-Sex-Hisp-Citizen-WAOB-InfoTechOccupations-AllStates-PersonalWeight-PUMS-2015-DataFerret.csv"
     file = "Race-Sex-Salary-Hisp-Citizen-WAOB-InfoTechOccupations-AllStates-PersonalWeight-PUMS-2015-DataFerret.csv"
-    dfCensus1Year2015 = read.csv(file, header=TRUE, stringsAsFactors = FALSE)
-    ###save(dfCensus1Year2015, file="dfCensus1Year2015.rda")
+    ### dfCensus1Year2015 = read.csv(file, header=TRUE, stringsAsFactors = FALSE) ### OLD
+    dfCensus1Year2015 = read_csv(file) 
+    save(dfCensus1Year2015, file="dfCensus1Year2015.rda")
     dfCensus2 = dfCensus1Year2015
     
     str(dfCensus2) ### Verify order of variables from PUMS
@@ -24,7 +26,7 @@
     colnames(dfCensus2) = c("personalWeight", "Hisp", "Birth" , "Citizen", "Sex", "State", "Race", "Salary", "Occupation") 
     str(dfCensus2) ### 45081 obs. of  8 variables ... with sallary = 45081 obs. of  9 variables:
     ### dfCensus2$Salary <- NULL
-    ### str(dfCensus2)
+    str(dfCensus2)
     save(dfCensus2, file="dfCensus2.rda")
     
 ### Data for Tables 4 about techs
@@ -57,7 +59,9 @@
     
     ### file2010 = "Race-Sex-Hisp-Citizen-WAOB-InfoTechOccupations-AllStates-PersonalWeight-PUMS-2010-DataFerret.csv"
     file2010 = "Race-Sex-Salary-Hisp-Citizen-WAOB-InfoTechOccupations-AllStates-PersonalWeight-PUMS-2010-DataFerret.csv"
-    dfCensus1Year2010 = read.csv(file2010, header=TRUE, stringsAsFactors = FALSE)
+    ### dfCensus1Year2010 = read.csv(file2010, header=TRUE, stringsAsFactors = FALSE) ### OLD
+    dfCensus1Year2010 = read_csv(file2010)
+    save(dfCensus1Year2010, file="dfCensus1Year2010.rda")
     dfCensus2.2010 = dfCensus1Year2010
     
     str(dfCensus2.2010) ### Verify order of variables from PUMS ########## DIFFERS FROM 2015
@@ -96,7 +100,9 @@
 ###  Read downloaded PUMS sample data and save ... NO occupation, NO area of birth
     
     file = "Race-Sex-Hisp-Citizen-AllStates-PersonalWeight-PUMS-2015-DataFerret.csv"
-    dfCensusPop1 = read.csv(file, header=TRUE, stringsAsFactors = FALSE)
+    ### dfCensusPop1 = read.csv(file, header=TRUE, stringsAsFactors = FALSE) ### OLD
+    
+    dfCensusPop1 = read_csv(file)
     head(dfCensusPop1)
     save(dfCensusPop1, file="dfCensusPop1.rda")
     str(dfCensusPop1) ### 1411289 obs. of  6 variables:
