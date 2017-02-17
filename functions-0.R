@@ -486,7 +486,7 @@ makeProfile3forBigSix <- function(listDfs) {
     for (i in seq(1:N)) {
         df <- listDfs[[i]]
         cols5 <- subset(df, select=Occupation:perCh)
-        rows4 <- cols5[df$Occupation %in% c("All Occupations", "SOFTWARE DEVELOPERS", "DATABASE ADMINISTRATORS", "COMP/INFO RSRCH SCIENTISTS"),]
+        rows4 <- cols5[df$Occupation %in% c("All Occupations", "SOFTWARE DEVELOPERS", "DATABASE ADMINISTRATORS", "COMP/INFO RESEARCH SCIENTISTS"),]
         
         ### Add a column for state
         rows4$State <- States[i]
